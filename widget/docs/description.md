@@ -17,4 +17,4 @@ After you install the widget in your account, you will need to add the widget to
 Once configured, the widget will take a few seconds to connect to the Veracode system. The widget will automatically display in red if the scan fails to meet any policy constraints. The large number shows the total number of unmitigated flaws identified by Veracode. 
 
 #Support
-If you find an issue, need help or have improvement suggestions you can do so by raising an issue on the widget GutHub page. Or why not help out by creating a pull request?
+If you find an issue, need help or have improvement suggestions you can do so by raising an issue on the widget [GitHub](https://github.com/headforwards/VeracodeVSTSWidgets) page. Or why not help out by creating a pull request?
