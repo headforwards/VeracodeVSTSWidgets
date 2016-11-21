@@ -252,4 +252,4 @@ paket-files/
 *.sln.iml
 
 # VSTS Extension files
-*.vsix
+**/*.vsix
