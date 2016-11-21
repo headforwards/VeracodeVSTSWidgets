@@ -1,12 +1,34 @@
 {
     "manifestVersion": 1,
     "id": "veracode-dashboard-widgets",
-    "version": "0.2.3",
+    "version": "0.3.0",
     "name": "Veracode Dashboard Widgets",
     "description": "Shows Veracode static analysis summary results on your VSTS dashboard to monitor the security of your code base",
     "publisher": "headforwards",
     "icons": {
         "default": "images/logo.png"
+    },
+    "categories": [
+        "Integrate"
+    ],
+    "tags": [
+        "security",
+        "integration",
+        "owasp",
+        "vulnerability",
+        "dashboard"
+    ],
+    "repository": {
+        "type": "git",
+        "uri": "https://github.com/headforwards/VeracodeVSTSWidgets/"
+    },
+    "links": {
+        "home": {
+            "uri": "https://www.headforwards.com"
+        },
+        "issues": {
+            "uri": "https://github.com/headforwards/VeracodeVSTSWidgets/issues"
+        }
     },
     "contributions": [
         {

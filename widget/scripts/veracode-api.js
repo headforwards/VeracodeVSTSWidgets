@@ -88,7 +88,7 @@ function retrieveVeracodeScanDataForWidget(scanId, widgetId, applicationId, user
                 console.log(jqXHR);
             },
             complete: function () {
-                console.log("Ajax request complete.");
+                // do nothing
             }
         });
     }
