@@ -1,0 +1,86 @@
+{
+    "manifestVersion": 1,
+    "id": "headforwards-veracode-extensions",
+    "version": "1.0.0",
+    "name": "Veracode Static Analysis Widget",
+    "description": "Shows Veracode static analysis summary results on your VSTS dashboard to monitor the security of your code base",
+    "publisher": "headforwards",
+    "icons": {
+        "default": "images/logo.png"
+    },
+    "contributions": [
+        {
+            "id": "VeracodeScanStatusWidget",
+            "type": "ms.vss-dashboards-web.widget",
+            "targets": [
+                "ms.vss-dashboards-web.widget-catalog",
+                ".VeracodeScanStatusWidget.Configuration"
+            ],
+            "properties": {
+                "name": "Latest Veracode Scan Summary Widget",
+                "description": "Displays the number of unmitigated flaws detected in the latest Veracode scan for a given application.",
+                "catalogIconUrl:": "images/catalog-item.png",
+                "previewImageUrl": "images/preview.png",                            
+                "uri": "veracode-widget.html",
+                "supportedSizes": [
+                        {
+                            "rowSpan": 1,
+                            "columnSpan": 1
+                        }
+                    ],
+                "supportedScopes": ["project_team"]
+            }
+        },
+        {
+             "id": "VeracodeScanStatusWidget.Configuration",
+             "type": "ms.vss-dashboards-web.widget-configuration",
+             "targets": [ "ms.vss-dashboards-web.widget-configuration" ],
+             "properties": {
+                 "name": "VeracodeScanStatusWidget Configuration",
+                 "description": "Configures VeracodeScanStatusWidget",
+                 "uri": "veracode-configuration.html"
+             }
+        }
+    ],
+    "demands": [
+        "contribution/ms.vss-dashboards-web.widget-sdk-version-2"
+    ],
+    "scopes": [
+        "vso.work",
+        "vso.build"
+    ],
+    "content": {
+        "details": {
+            "path": "docs/description.md"
+        }
+    },
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "files": [
+            {
+                "path": "veracode-widget.html", "addressable": true
+            },
+            {
+                "path": "veracode-configuration.html", "addressable": true
+            },
+            {
+                "path": "scripts", "addressable": true
+            },
+            {
+                "path": "sdk/scripts", "addressable": true
+            },
+            {
+                "path": "images", "addressable": true
+            },
+            {
+                "path": "css", "addressable": true
+            },
+            {
+                "path": "docs", "addressable": true
+            }
+        ]
+
+}

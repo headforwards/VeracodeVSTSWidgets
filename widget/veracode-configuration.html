@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>   
+        <style type="text/css">
+            .container input {
+                width: 100%;
+            }
+        </style>
+                         
+        <script src="sdk/scripts/VSS.SDK.js"></script>
+        <script type="text/javascript">
+            VSS.init({                        
+                explicitNotifyLoaded: true,
+                usePlatformStyles: true
+            });
+
+            VSS.require("TFS/Dashboards/WidgetHelpers", function (WidgetHelpers) {
+                VSS.register("VeracodeScanStatusWidget.Configuration", function () {   
+                    
+                    var $appId = $("#appId");
+                    var $user = $("#apiUser");
+                    var $pwd = $("#apiPwd");
+
+                    return {
+                        load: function (widgetSettings, widgetConfigurationContext) {
+                            
+                            // parse the settings from Tfs
+                            var settings = JSON.parse(widgetSettings.customSettings.data);
+
+                            // if there is a setting update the UI element
+                            if (settings && settings.applicationId) {
+                                $appId.val(settings.applicationId);
+                            }
+
+                            if (settings && settings.apiUserName) {
+                                $user.val(settings.apiUserName);
+                            }
+
+                            if (settings && settings.apiPassword) {
+                                $pwd.val(settings.apiPassword);
+                            }
+
+                            // make sure the settings are updated on change
+                            $appId.on("change", function() {
+                                var customSettings = {
+                                    data: JSON.stringify({
+                                            applicationId: $("#appId").val(),
+                                            apiUserName: $("#apiUser").val(),
+                                            apiPassword: $("#apiPwd").val()
+                                        })
+                                };
+                                var eventName = WidgetHelpers.WidgetEvent.ConfigurationChange;
+                                var eventArgs = WidgetHelpers.WidgetEvent.Args(customSettings);
+                                widgetConfigurationContext.notify(eventName, eventArgs);
+                            });
+
+                            $user.on("change", function() {
+                                var customSettings = {
+                                    data: JSON.stringify({
+                                            applicationId: $("#appId").val(),
+                                            apiUserName: $("#apiUser").val(),
+                                            apiPassword: $("#apiPwd").val()
+                                        })
+                                };
+                                var eventName = WidgetHelpers.WidgetEvent.ConfigurationChange;
+                                var eventArgs = WidgetHelpers.WidgetEvent.Args(customSettings);
+                                widgetConfigurationContext.notify(eventName, eventArgs);
+                            });
+
+                            $pwd.on("change", function() {
+                                var customSettings = {
+                                    data: JSON.stringify({
+                                            applicationId: $("#appId").val(),
+                                            apiUserName: $("#apiUser").val(),
+                                            apiPassword: $("#apiPwd").val()
+                                        })
+                                };
+                                var eventName = WidgetHelpers.WidgetEvent.ConfigurationChange;
+                                var eventArgs = WidgetHelpers.WidgetEvent.Args(customSettings);
+                                widgetConfigurationContext.notify(eventName, eventArgs);
+                            });
+
+                            return WidgetHelpers.WidgetStatusHelper.Success();
+                        },
+                        onSave: function() {
+
+                            var customSettings = {
+                                data: JSON.stringify({
+                                        applicationId: $appId.val(),
+                                        apiUserName: $user.val(),
+                                        apiPassword: $pwd.val()
+                                    })
+                            };
+
+                            return WidgetHelpers.WidgetConfigurationSave.Valid(customSettings);    
+                        }
+                    }
+                });
+                VSS.notifyLoadSucceeded();
+            });
+        </script>             
+    </head>
+    <body>
+        <div class="container">
+            <fieldset>
+                <label class="label">Veracode Application Id: </label>
+                <input type="text" name="applicationId" id="appId">
+                <br />
+                <br />
+                <label class="label">Veracode API User: </label>
+                <input type="text" name="apiUserName" id="apiUser">
+                <br />
+                <br />
+                <label class="label">Veracode API Password: </label>
+                <input type="password" name="apiPassword" id="apiPwd">
+            </fieldset>                
+        </div>
+    </body>
+
+</html>

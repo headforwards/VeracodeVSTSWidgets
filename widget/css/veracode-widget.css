@@ -1,0 +1,38 @@
+/*Styling for the Veracode Widget Status Shield */ 
+
+.policyDidNotPass {
+    background-repeat:  no-repeat;
+    background-image: url(https://analysiscenter.veracode.com/images/policy/icon-shield-2.png);
+    background-blend-mode: screen;
+}
+
+.policyDidPassWithWarnings {
+    background-image: url(https://analysiscenter.veracode.com/images/policy/icon-shield-1.png);
+    background-repeat:  no-repeat;
+    background-blend-mode: screen;
+}
+
+.policyDidPass {
+    background-image: url(https://analysiscenter.veracode.com/images/policy/icon-shield-0.png);
+    background-repeat:  no-repeat;
+    background-blend-mode: screen;
+}
+
+.policyPassIcon {
+    height: 70px;
+    width: 60px;
+    float: right;
+    z-index: 0
+}
+
+/* Styling for Veracode Widget */
+
+.veracode-widget {
+  display: block;
+  color: #FFFFFF;
+  padding: 5px 9px;
+  border: 2px solid transparent;
+  height: 100%;
+  text-decoration: none;
+  cursor: pointer;
+}
