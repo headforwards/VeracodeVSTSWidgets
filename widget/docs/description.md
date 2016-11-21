@@ -1,7 +1,7 @@
 # Veracode data at your finger tips
 View a summary of the latest Veracode scan results without leaving VSTS! Just put the Latest Veracode Scan Summary Widget on your VSTS dashboard, and keep tabs on how secure your code is. Need to track several applications on a single dashboard? No problem - just add widgets to your dashboard as needed.
 
-![LatestWidgetExample](../images/example-pass.png)
+![LatestWidgetExample](description.png)
 
 # Configuration
 ## Installation

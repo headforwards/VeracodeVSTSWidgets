@@ -25,7 +25,7 @@
 
             VSS.require("TFS/Dashboards/WidgetHelpers", function (WidgetHelpers) {
                 WidgetHelpers.IncludeWidgetStyles();
-                VSS.register("VeracodeScanStatusWidget", function () {                
+                VSS.register("VeracodeLatestScanStatusWidget", function () {                
                     return {
                         load: function (widgetSettings) {
                             var settings = JSON.parse(widgetSettings.customSettings.data);

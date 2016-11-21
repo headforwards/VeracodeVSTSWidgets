@@ -1,8 +1,8 @@
 {
     "manifestVersion": 1,
-    "id": "headforwards-veracode-extensions",
-    "version": "1.0.0",
-    "name": "Veracode Static Analysis Widget",
+    "id": "veracode-dashboard-widgets",
+    "version": "0.2.1",
+    "name": "Veracode Dashboard Widgets",
     "description": "Shows Veracode static analysis summary results on your VSTS dashboard to monitor the security of your code base",
     "publisher": "headforwards",
     "icons": {
@@ -10,11 +10,11 @@
     },
     "contributions": [
         {
-            "id": "VeracodeScanStatusWidget",
+            "id": "VeracodeLatestScanStatusWidget",
             "type": "ms.vss-dashboards-web.widget",
             "targets": [
                 "ms.vss-dashboards-web.widget-catalog",
-                ".VeracodeScanStatusWidget.Configuration"
+                ".VeracodeLatestScanStatusWidget.Configuration"
             ],
             "properties": {
                 "name": "Latest Veracode Scan Summary Widget",
@@ -32,12 +32,12 @@
             }
         },
         {
-             "id": "VeracodeScanStatusWidget.Configuration",
+             "id": "VeracodeLatestScanStatusWidget.Configuration",
              "type": "ms.vss-dashboards-web.widget-configuration",
              "targets": [ "ms.vss-dashboards-web.widget-configuration" ],
              "properties": {
-                 "name": "VeracodeScanStatusWidget Configuration",
-                 "description": "Configures VeracodeScanStatusWidget",
+                 "name": "VeracodeLatestScanStatusWidget Configuration",
+                 "description": "Configures VeracodeLatestScanStatusWidget",
                  "uri": "veracode-configuration.html"
              }
         }
