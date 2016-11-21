@@ -28,11 +28,9 @@
                 VSS.register("VeracodeLatestScanStatusWidget", function () {                
                     return {
                         load: function (widgetSettings) {
-                            var settings = JSON.parse(widgetSettings.customSettings.data);
                             
-                            console.log(settings);
-
                             try {
+                                var settings = JSON.parse(widgetSettings.customSettings.data);
 
                                 if (settings.applicationId != undefined && settings.apiUserName != undefined && settings.apiPassword != undefined) {
                                     // get the data
@@ -40,7 +38,7 @@
                                         settings.applicationId, settings.apiUserName, settings.apiPassword);
                                 }
                                 else {
-                                    console.log("Invalid widget settings found.");
+                                    console.log("Incomplete widget settings found.");
                                 }
 
                                 return WidgetHelpers.WidgetStatusHelper.Success();
