@@ -36,3 +36,20 @@
   text-decoration: none;
   cursor: pointer;
 }
+
+.veracode-widget-loading {
+    display: block;
+    padding: 5px 9px;
+    border: 2px solid transparent;
+    height: 100%;
+    text-decoration: none;
+    cursor: wait;
+}
+
+.veracode-widget-loading .fa-5x {
+    padding: 25px 16px;
+}
+
+.veracode-widget-loading .footer {
+    text-align: center;
+}

@@ -1,7 +1,7 @@
 {
     "manifestVersion": 1,
     "id": "veracode-dashboard-widgets",
-    "version": "0.3.0",
+    "version": "0.4.5",
     "name": "Veracode Dashboard Widgets",
     "description": "Shows Veracode static analysis summary results on your VSTS dashboard to monitor the security of your code base",
     "publisher": "headforwards",
